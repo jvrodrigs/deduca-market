@@ -34,7 +34,7 @@ class Products(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = ProductFilter
+    filter_fields = ['title', 'price']
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
